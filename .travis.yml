@@ -15,6 +15,7 @@ after_success:
   - docker build -t belcherman2/multi-worker ./worker
 
 #log into docker cli
+  - echo "$DOCKER_ID"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #push images to docker
