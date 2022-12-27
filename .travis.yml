@@ -3,24 +3,24 @@ services:
   - docker
 
 before_install:
-  - docker build -t belcherman2/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t belcherman/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true belcherman2/react-test npm test 
+  - docker run -e CI=true belcherman/react-test npm test 
 
 after_success:
-  - docker build -t belcherman2/multi-client ./client
-  - docker build -t belcherman2/multi-nginx ./nginx
-  - docker build -t belcherman2/multi-server ./server
-  - docker build -t belcherman2/multi-worker ./worker
+  - docker build -t belcherman/multi-client ./client
+  - docker build -t belcherman/multi-nginx ./nginx
+  - docker build -t belcherman/multi-server ./server
+  - docker build -t belcherman/multi-worker ./worker
 
 #log into docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u belcherman --password-stdin
 
 #push images to docker
-  - docker push belcherman2/multi-client
-  - docker push belcherman2/multi-nginx
-  - docker push belcherman2/multi-server 
-  - docker push belcherman2/multi-worker
+  - docker push belcherman/multi-client
+  - docker push belcherman/multi-nginx
+  - docker push belcherman/multi-server 
+  - docker push belcherman/multi-worker
 
 
