@@ -9,6 +9,6 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "start": "node --trace-warnings index.js"
+    "start": "node index.js"
   }
 }
