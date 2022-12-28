@@ -9,7 +9,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <div><h1>Fib Calculator</h1></div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>className="App-title">Welcome to React</h1>
@@ -28,6 +27,7 @@ function App() {
           <Route exact path="/" component={Fib} />
           <Route path="/otherpage" component={OtherPage} />
         </div>
+        <div><h1>Fib Calculator</h1></div>
       </div>
     </Router>
   );
